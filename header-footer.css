@@ -221,9 +221,14 @@
 }
 
 
-@media only screen and (max-width:767px){
-  .site-header.scrolled { width: calc(100% - 24px); }
-  .nav-shell { width: min(calc(100% - 24px)}
+@media only screen and (max-width: 767px) {
+  .site-header.scrolled {
+    width: calc(100% - 24px);
+  }
+
+  .nav-shell {
+    width: min(calc(100% - 24px), var(--max-width));
+  }
 }
 
 @media (max-width: 620px) {
