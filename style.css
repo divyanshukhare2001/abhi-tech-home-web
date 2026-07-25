@@ -2185,9 +2185,9 @@ h4 {
 }
 
 @media (max-width: 640px) {
-  .container {
+  /* .container {
     padding: 0 20px;
-  }
+  } */
 
   .solutions {
     padding: 64px 0 56px;
