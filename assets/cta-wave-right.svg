@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 460" fill="none">
+  <defs>
+    <linearGradient id="wave" x1="80" y1="250" x2="710" y2="250" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#19dff5" stop-opacity="0"/>
+      <stop offset=".35" stop-color="#19dff5" stop-opacity=".42"/>
+      <stop offset="1" stop-color="#20ecff"/>
+    </linearGradient>
+    <filter id="glow" x="-30%" y="-80%" width="160%" height="260%">
+      <feGaussianBlur stdDeviation="5"/>
+    </filter>
+  </defs>
+  <circle cx="610" cy="78" r="130" stroke="#20dff4" stroke-opacity=".15"/>
+  <circle cx="610" cy="78" r="88" stroke="#20dff4" stroke-opacity=".32"/>
+  <g stroke="url(#wave)" stroke-linecap="round" stroke-width="2" stroke-dasharray="1 11">
+    <path d="M30 280C180 180 292 362 445 280S624 146 750 230"/>
+    <path d="M22 292C182 194 292 374 449 292S630 158 754 240" opacity=".92"/>
+    <path d="M18 304C180 211 295 388 452 304S638 170 758 250" opacity=".84"/>
+    <path d="M20 316C188 226 300 398 460 316S646 184 762 260" opacity=".76"/>
+    <path d="M28 328C192 244 310 410 468 328S654 198 766 272" opacity=".68"/>
+    <path d="M40 340C202 260 320 420 478 340S664 214 772 286" opacity=".58"/>
+    <path d="M58 352C216 278 334 430 490 352S674 230 778 300" opacity=".48"/>
+    <path d="M82 364C232 298 350 438 506 364S688 250 784 316" opacity=".38"/>
+  </g>
+  <path d="M45 309C202 212 305 390 460 307S640 166 760 248" stroke="#21eaff" stroke-opacity=".28" filter="url(#glow)"/>
+  <circle cx="565" cy="169" r="2" fill="#21eaff"/>
+  <circle cx="421" cy="139" r="1.5" fill="#21eaff"/>
+  <circle cx="671" cy="202" r="1.5" fill="#21eaff"/>
+</svg>
