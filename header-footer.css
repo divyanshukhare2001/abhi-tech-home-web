@@ -152,9 +152,9 @@
 
 @media (max-width: 900px) {
   :root { --header-height: 72px; }
-   .nav-shell { width: min(calc(100% - 24px), var(--max-width)); }
+   .nav-shell { width: min(calc(100% - 48px), var(--max-width)); }
   .nav-shell { grid-template-columns: 1fr auto; }
-  .site-header.scrolled { top: 9px; width: calc(100% - 24px); height: 60px; }
+  .site-header.scrolled { top: 9px; width: calc(100% - 48px); height: 60px; }
   .site-header.scrolled .nav-shell { width: 100%; padding-inline: 12px; }
   .site-header.menu-visible { top: 0; left: 0; width: 100%; height: var(--header-height); border-radius: 0; transform: none; }
   .site-header.menu-visible .nav-shell { width: min(calc(100% - 24px), var(--max-width)); padding-inline: 0; }
@@ -218,6 +218,12 @@
   .nav-cta { position: fixed; right: 18px; bottom: 22px; left: 18px; z-index: 110; display: none; }
   .site-header .primary-nav .nav-cta { display: flex; }
 
+}
+
+
+@media only screen and (max-width:767px){
+  .site-header.scrolled { width: calc(100% - 24px); }
+  .nav-shell { width: min(calc(100% - 24px)}
 }
 
 @media (max-width: 620px) {
