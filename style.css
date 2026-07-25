@@ -1599,7 +1599,7 @@ h4 {
 
   @media (max-width: 900px){
     .grid-services{grid-template-columns:repeat(2,1fr);}
-    section.services{padding:64px 24px 80px;}
+    section.services{padding-top:64px;, padding-bottom: 80px;}
     h2.title{font-size:30px;}
   }
   @media (max-width: 560px){
