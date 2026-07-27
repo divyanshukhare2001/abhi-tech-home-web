@@ -935,6 +935,54 @@ Plot No RZ B-4, GF, Raghu Nagar Near Janakpuri South/Dabri Metro, Pankha Road, N
       </div>
     </footer>
 
+          <!-- Demo Modal -->
+<div id="demo-modal" class="modal-overlay">
+  <div class="modal-content">
+    <button id="close-modal" class="close-btn">&times;</button>
+    
+    <!-- STEP 1: Quick Details Form -->
+    <div id="form-step">
+      <h2>Request a Product Demo</h2>
+      <p>Tell us what you're interested in, then pick a time that works for you.</p>
+      
+      <form id="demo-form">
+        <div class="form-group">
+          <label for="user-name">Full Name *</label>
+          <input type="text" id="user-name" required placeholder="John Doe">
+        </div>
+
+        <div class="form-group">
+          <label for="user-email">Work Email *</label>
+          <input type="email" id="user-email" required placeholder="john@company.com">
+        </div>
+
+        <div class="form-group">
+          <label for="product-select">Product of Interest *</label>
+          <select id="product-select" required>
+            <option value="" disabled selected>Select product...</option>
+            <option value="Croire">Croire</option>
+            <option value="Insta Enroll">Insta Enroll</option>
+            <option value="Anmelde">Anmelde</option>
+            <option value="Kovantis">Kovantis</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="company-name">Company Name (Optional)</label>
+          <input type="text" id="company-name" placeholder="Acme Corp">
+        </div>
+
+        <button type="submit" class="submit-btn">Next: Pick a Time &rarr;</button>
+      </form>
+    </div>
+
+    <!-- STEP 2: Calendly Inline Container (Hidden initially) -->
+    <div id="calendar-step" style="display: none;">
+      <h2>Select Date & Time</h2>
+      <div id="calendly-embed" style="min-width:320px;height:630px;"></div>
+    </div>
+  </div>
+</div>
 
 <!-- <script>
   const form = document.getElementById('contactForm');
@@ -952,6 +1000,80 @@ Plot No RZ B-4, GF, Raghu Nagar Near Janakpuri South/Dabri Metro, Pankha Road, N
   });
 </script> -->
 <script src="./header.js"></script>
+<script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+<script>
+  
+// product demo-book-code
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  // Replace this with your actual Calendly URL link
+  const CALENDLY_LINK = 'https://calendly.com/kharedivyanshu8/product-demo-call';
+
+  const demoBtn = document.querySelectorAll('.demo-btn'); // ID of your header button
+  const modal = document.querySelector('#demo-modal');
+  const closeModal = document.querySelector('#close-modal');
+  const demoForm = document.querySelector('#demo-form');
+  const formStep = document.querySelector('#form-step');
+  const calendarStep = document.querySelector('#calendar-step');
+
+  // 1. Open Modal on Header Button Click
+  if (demoBtn) {
+    demoBtn.forEach((btn) => {
+      btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      modal.classList.add('active');
+    });
+    })
+  }
+
+  // 2. Close Modal Functions
+  const handleClose = () => {
+    modal.classList.remove('active');
+    // Reset steps back to form when closed
+    setTimeout(() => {
+      formStep.style.display = 'block';
+      calendarStep.style.display = 'none';
+      demoForm.reset();
+    }, 300);
+  };
+
+  closeModal.addEventListener('click', handleClose);
+  
+  // Close if user clicks outside the modal box
+  window.addEventListener('click', (e) => {
+    if (e.target === modal) handleClose();
+  });
+
+  // 3. Form Submit -> Inject Calendly Widget with User Data
+  demoForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const name = document.querySelector('#user-name').value;
+    const email = document.querySelector('#user-email').value;
+    const product = document.querySelector('#product-select').value;
+    const company = document.querySelector('#company-name').value || 'Not specified';
+
+    // Hide Step 1 Form, Show Step 2 Calendar
+    formStep.style.display = 'none';
+    calendarStep.style.display = 'block';
+
+    // Pass details directly into Calendly so user doesn't re-type them
+    Calendly.initInlineWidget({
+      url: CALENDLY_LINK,
+      parentElement: document.getElementById('calendly-embed'),
+      prefill: {
+        name: name,
+        email: email,
+        customAnswers: {
+          a1: `Product: ${product} | Company: ${company}` // Passes details to Calendly questions
+        }
+      }
+    });
+  });
+});
+
+</script>
 
 </body>
 </html>
