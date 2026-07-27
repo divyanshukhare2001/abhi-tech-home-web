@@ -226,6 +226,10 @@
     width: calc(100% - 24px);
   }
 
+  .site-header.scrolled.menu-visible{
+    width: 100%;
+  }
+  
   .nav-shell {
     width: min(calc(100% - 24px), var(--max-width));
   }
