@@ -103,7 +103,7 @@ section{
   padding-right: 24px; */
   overflow: clip;
 }
-#home .hero {
+#home.hero {
   --cyan: #215cff;
   position: relative;
   display: grid;
@@ -115,8 +115,8 @@ section{
   overflow: hidden;
   isolation: isolate;
 }
-#home .hero::after { position: absolute; right: 0; bottom: 0; left: 0; z-index: 4; height: 110px; background: linear-gradient(transparent, rgba(232,237,244,.9)); content: ""; pointer-events: none; }
-#home .hero-grid {
+#home.hero::after { position: absolute; right: 0; bottom: 0; left: 0; z-index: 4; height: 110px; background: linear-gradient(transparent, rgba(232,237,244,.9)); content: ""; pointer-events: none; }
+#home.hero-grid {
   position: absolute;
   inset: 0;
   opacity: .5;
